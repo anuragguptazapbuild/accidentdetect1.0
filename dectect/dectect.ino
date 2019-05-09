@@ -135,10 +135,10 @@ void displayInfo()
   {
     Serial.print("Latitude: ");
     Serial.println(gps.location.lat(), 6);
-    latitude=(gps.location.lat(),6);
+    latitude=gps.location.lat();
     Serial.print("Longitude: ");
     Serial.println(gps.location.lng(), 6);
-float    longitude=(gps.location.lng(), 6);
+    float longitude=gps.location.lng();
     Serial.print("Altitude: ");
     Serial.println(gps.altitude.meters());
   }
@@ -195,7 +195,7 @@ void Send()
    serialPrint();
    Serial1.print("AT+CMGS=");
    Serial1.print('"');
-   Serial1.print("9821757249");    //mobile no. for SMS alert
+   Serial1.print("**********");    //10 digit mobile number  for SMS alert
    Serial1.println('"');
    delay(500);
    serialPrint();
